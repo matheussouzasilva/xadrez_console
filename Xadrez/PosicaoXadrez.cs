@@ -13,6 +13,11 @@ namespace xadrez
             this.linha = linha;
         }
 
+        public Posicao ToPosicao()
+        {
+            return new Posicao(8 - linha, coluna - 'a');
+        }
+
         public override string ToString()
         {
             return "" + coluna + linha;
