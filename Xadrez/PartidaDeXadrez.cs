@@ -2,7 +2,7 @@ using tabuleiro;
 
 namespace xadrez
 {
-    public class PartidaDeXadrez
+    class PartidaDeXadrez
     {
         public Tabuleiro tab { get; private set; }
         private int turno;
