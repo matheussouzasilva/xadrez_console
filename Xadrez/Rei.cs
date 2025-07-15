@@ -2,20 +2,15 @@ using tabuleiro;
 
 namespace xadrez
 {
-    public class PosicaoXadrez
+    public class Rei : Peca
     {
-        public char coluna { get; set; }
-        public int linha { get; set; }
-
-        public PosicaoXadrez(char coluna, int linha)
-        {
-            this.coluna = coluna;
-            this.linha = linha;
+        public Rei(Tabuleiro tab, Cor cor) : base(tab, cor)
+        {   
         }
 
         public override string ToString()
         {
-            return "" + coluna + linha;
+            return "R";
         }
     }
 }
