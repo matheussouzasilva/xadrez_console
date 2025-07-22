@@ -1,4 +1,4 @@
-namespace tabuleiro
+﻿namespace tabuleiro 
 {
     abstract class Peca
     {
@@ -10,20 +10,21 @@ namespace tabuleiro
         public Peca(Tabuleiro tab, Cor cor)
         {
             this.posicao = null;
+            this.tab = tab;
             this.cor = cor;
             this.qteMovimentos = 0;
-            this.tab = tab;
         }
 
-        public void IncrementarQtdMovimentos()
+        public void IncrementarQteMovimentos()
         {
             qteMovimentos++;
         }
 
-        public void DecrementarQtdMovimentos()
+        public void DecrementarQteMovimentos()
         {
             qteMovimentos--;
         }
+
         public bool ExisteMovimentosPossiveis()
         {
             bool[,] mat = MovimentosPossiveis();

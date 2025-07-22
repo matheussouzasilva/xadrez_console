@@ -1,12 +1,11 @@
-using tabuleiro;
+﻿using tabuleiro;
 
-namespace xadrez
+namespace xadrez 
 {
     class Cavalo : Peca
     {
         public Cavalo(Tabuleiro tab, Cor cor) : base(tab, cor)
-        {
-        }
+        {}
 
         public override string ToString()
         {
@@ -15,9 +14,8 @@ namespace xadrez
 
         private bool PodeMover(Posicao pos)
         {
-            Peca p = tab.Peca(pos);
-            return p == null || p.cor != this.cor;
-
+            Peca p = tab.peca(pos);
+            return p == null || p.cor != cor;
         }
 
         public override bool[,] MovimentosPossiveis()
@@ -31,43 +29,36 @@ namespace xadrez
             {
                 mat[pos.linha, pos.coluna] = true;
             }
-
             pos.DefinirValores(posicao.linha - 2, posicao.coluna - 1);
             if (tab.PosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
-
             pos.DefinirValores(posicao.linha - 2, posicao.coluna + 1);
             if (tab.PosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
-
             pos.DefinirValores(posicao.linha - 1, posicao.coluna + 2);
             if (tab.PosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
-
             pos.DefinirValores(posicao.linha + 1, posicao.coluna + 2);
             if (tab.PosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
-
             pos.DefinirValores(posicao.linha + 2, posicao.coluna + 1);
             if (tab.PosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
-
             pos.DefinirValores(posicao.linha + 2, posicao.coluna - 1);
             if (tab.PosicaoValida(pos) && PodeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
             }
-
             pos.DefinirValores(posicao.linha + 1, posicao.coluna - 2);
             if (tab.PosicaoValida(pos) && PodeMover(pos))
             {
